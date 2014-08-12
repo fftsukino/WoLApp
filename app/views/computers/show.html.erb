@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @computer.name %>
+</p>
+
+<p>
+  <strong>Ipaddr:</strong>
+  <%= @computer.ipaddr %>
+</p>
+
+<p>
+  <strong>Macaddr:</strong>
+  <%= @computer.macaddr %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @computer.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @computer.description %>
+</p>
+
+<%= link_to 'Edit', edit_computer_path(@computer) %> |
+<%= link_to 'Back', computers_path %>
