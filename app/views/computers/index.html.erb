@@ -1,13 +1,13 @@
-<h1>Listing computers</h1>
+<h1>マシンリスト</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Ipaddr</th>
-      <th>Macaddr</th>
-      <th>Status</th>
-      <th>Description</th>
+      <th>ホスト名</th>
+      <th>IPアドレス</th>
+      <th>MACアドレス</th>
+      <th>電源ON/OFF</th>
+      <th>マシン説明</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,6 +23,7 @@
         <td><%= link_to 'Show', computer %></td>
         <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
         <td><%= link_to 'Destroy', computer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Wake', wake_computer_path(computer) %></td>
       </tr>
     <% end %>
   </tbody>

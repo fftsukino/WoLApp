@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :computers
+  get '/computers/:id/wake(.:format)', to: 'computers#wake', as: 'wake_computer'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

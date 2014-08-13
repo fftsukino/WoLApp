@@ -1,5 +1,7 @@
+require 'wakeonlan'
+
 class ComputersController < ApplicationController
-  before_action :set_computer, only: [:show, :edit, :update, :destroy]
+  before_action :set_computer, only: [:show, :edit, :update, :wake, :destroy]
 
   # GET /computers
   # GET /computers.json
@@ -59,6 +61,14 @@ class ComputersController < ApplicationController
       format.html { redirect_to computers_url, notice: 'Computer was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def wake
+    wol = WakeOnLan.new
+    logger.debug(@computer)
+    @computer.inspect
+    wol.wake( @computer[ :macaddr] )
+    wol.close
   end
 
   private
