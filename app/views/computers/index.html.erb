@@ -1,0 +1,34 @@
+<h1>マシンリスト</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ホスト名</th>
+      <th>IPアドレス</th>
+      <th>MACアドレス</th>
+      <th>電源ON/OFF</th>
+      <th>マシン説明</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @computers.each do |computer| %>
+      <tr>
+        <td><%= computer.name %></td>
+        <td><%= computer.ipaddr %></td>
+        <td><%= computer.macaddr %></td>
+        <td><%= computer.status %></td>
+        <td><%= computer.description %></td>
+        <td><%= link_to 'Show', computer %></td>
+        <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
+        <td><%= link_to 'Destroy', computer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Wake', wake_computer_path(computer) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Computer', new_computer_path %>

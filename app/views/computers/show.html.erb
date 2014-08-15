@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ホスト名:</strong>
+  <%= @computer.name %>
+</p>
+
+<p>
+  <strong>IPアドレス:</strong>
+  <%= @computer.ipaddr %>
+</p>
+
+<p>
+  <strong>MACアドレス:</strong>
+  <%= @computer.macaddr %>
+</p>
+
+<p>
+  <strong>電源ON/OFF:</strong>
+  <%= @computer.status %>
+</p>
+
+<p>
+  <strong>マシン説明:</strong>
+  <%= @computer.description %>
+</p>
+
+<%= link_to 'Edit', edit_computer_path(@computer) %> |
+<%= link_to 'Back', computers_path %>
